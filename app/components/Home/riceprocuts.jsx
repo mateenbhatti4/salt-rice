@@ -15,14 +15,19 @@ const RiceProducts = () => {
               <div className="project-two__content-box">
                 <div className="section-title text-left">
                   <div className="section-title__tagline-box">
-                    <span className="section-title__tagline">Latest Project</span>
+                    <span className="section-title__tagline">
+                      FEATURED RICE PRODUCTS
+                    </span>
                   </div>
                   <h2 className="section-title__title">
-                    Seamless logistics for your logo
+                    Discover Authentic Rice product
                   </h2>
                 </div>
                 <div className="project-two__btn-box">
-                  <a href="project-details.html" className="thm-btn project-two__btn">
+                  <a
+                    href="/rice"
+                    className="thm-btn project-two__btn"
+                  >
                     More Products
                     <span className="!relative">
                       <FontAwesomeIcon
@@ -38,7 +43,11 @@ const RiceProducts = () => {
 
           {/* Map through products JSON */}
           {products.slice(0, 5).map((product) => (
-            <div key={product.id} className="wow fadeInUp" data-wow-delay="300ms">
+            <div
+              key={product.id}
+              className="wow fadeInUp"
+              data-wow-delay="300ms"
+            >
               <div className="project-two__single">
                 <div className="project-two__img">
                   <img src={product.image} alt={product.title} />
@@ -52,7 +61,6 @@ const RiceProducts = () => {
               </div>
             </div>
           ))}
-
         </div>
       </div>
     </section>

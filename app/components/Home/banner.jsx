@@ -34,7 +34,7 @@ function Banner() {
                   </p>
                   <div className="main-slider__btn-and-call-box">
                     <div className="main-slider__btn-box">
-                      <a href="/products" className="thm-btn main-slider__btn">
+                      <a href="/salt" className="thm-btn main-slider__btn">
                         Explore Products
                         <span className="!relative">
                           <FontAwesomeIcon icon={faArrowRight} className="absolute h-5 top-[15px] left-[15px]" />
@@ -69,8 +69,8 @@ function Banner() {
                 </p>
               </div>
               <h2 className="main-slider__title">
-                Pure Himalayan Salt <br /> & Finest{" "}
-                Basmati Rice
+                Pure <span>Himalayan Salt</span> <br /> & Finest{" "}
+                <span>Basmati Rice</span>
               </h2>
               <p className="main-slider__text">
                 Offering 100% natural Himalayan salt and the finest grade
@@ -78,7 +78,7 @@ function Banner() {
               </p>
               <div className="main-slider__btn-and-call-box">
                 <div className="main-slider__btn-box">
-                  <a href="/products" className="thm-btn main-slider__btn">
+                  <a href="/salt" className="thm-btn main-slider__btn">
                     Explore Products
                     <span className="!relative">
                       <FontAwesomeIcon icon={faArrowRight} className="absolute h-5 top-[15px] left-[15px]" />

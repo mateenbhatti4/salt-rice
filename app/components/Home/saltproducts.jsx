@@ -16,16 +16,16 @@ const SaltProducts = () => {
                 <div className="section-title text-left">
                   <div className="section-title__tagline-box">
                     <span className="section-title__tagline">
-                      Latest Project
+                      FEATURED SALT PRODUCTS
                     </span>
                   </div>
                   <h2 className="section-title__title">
-                    Seamless logistics for your logo
+                    Authentic Himalayan salt product
                   </h2>
                 </div>
                 <div className="project-two__btn-box">
                   <a href="/salt" className="thm-btn project-two__btn">
-                    More Projects
+                    More Products
                     <span className="!relative">
                       <FontAwesomeIcon
                         icon={faArrowRight}

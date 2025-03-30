@@ -2090,6 +2090,14 @@ ul {
   .banner-info-mobile .number{
     color: #000000 !important;
   }
+  .banner-info-mobile h2 span{
+    color: #C11425;
+    text-decoration: none;
+  }
+  .banner-info-mobile h2 span::before{
+    background-color: white;
+    bottom: 0;
+  }
 }
 
 .main-slider__btn-box {
@@ -6149,6 +6157,13 @@ ul {
   margin-top: 74px;
   z-index: 1;
 }
+@media screen and (max-width: 480px) {
+  .contact-two__left {
+    padding: 30px; /* Adjust padding for smaller screens */
+    margin-top: 40px; /* Reduce margin for smaller screens */
+  }
+}
+
 
 .contact-two__form {
   position: relative;
