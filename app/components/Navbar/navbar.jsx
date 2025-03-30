@@ -1,7 +1,7 @@
 "use client";
+import { faXmark, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
   const [isMobileNavExpanded, setIsMobileNavExpanded] = useState(false);
@@ -9,7 +9,7 @@ function Navbar() {
 
   const toggleMobileNav = (e) => {
     e.preventDefault();
-    setIsMobileNavExpanded(!isMobileNavExpanded);
+    setIsMobileNavExpanded((prev) => !prev);
     document.body.classList.toggle("locked");
   };
 
@@ -28,44 +28,154 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const stickyHeaders = document.getElementsByClassName('stricked-menu');
+      const stickyHeaders = document.getElementsByClassName("stricked-menu");
       if (stickyHeaders.length > 0) {
         const stickyHeader = stickyHeaders[0];
-        if (window.scrollY > 100) {
-          stickyHeader.classList.add('stricky-fixed');
-        } else {
-          stickyHeader.classList.remove('stricky-fixed');
-        }
+        stickyHeader.classList.toggle("stricky-fixed", window.scrollY > 100);
       }
     };
 
-    // Populate mobile navigation
-    if (document.querySelector(".main-menu__list") && document.querySelector(".mobile-nav__container")) {
-      try {
-        let navContent = document.querySelector(".main-menu__list").outerHTML;
-        let mobileNavContainer = document.querySelector(".mobile-nav__container");
+    const populateMobileNav = () => {
+      const navContent = document.querySelector(".main-menu__list")?.outerHTML;
+      const mobileNavContainer = document.querySelector(
+        ".mobile-nav__container"
+      );
+      if (navContent && mobileNavContainer) {
         mobileNavContainer.innerHTML = navContent;
-      } catch (error) {
-        console.error("Error populating mobile navigation:", error);
-      }
-    }
 
-    // Populate sticky header
-    if (document.querySelector(".sticky-header__content")) {
-      try {
-        let navContent = document.querySelector(".main-menu").innerHTML;
-        let stickyHeaderContainer = document.querySelector(".sticky-header__content");
+        // Change display of dropdowns from none to block
+        const dropdowns = mobileNavContainer.querySelectorAll(
+          ".main-menu__list > li > ul"
+        );
+        dropdowns.forEach((dropdown) => {
+          dropdown.style.display = "block"; // Change display to block
+        });
+
+        // Change display of nested dropdowns from none to block
+        const nestedDropdowns = mobileNavContainer.querySelectorAll(
+          ".main-menu__list > li > ul > li > ul"
+        );
+        nestedDropdowns.forEach((nestedDropdown) => {
+          nestedDropdown.style.display = "block"; // Change display to block
+        });
+      }
+    };
+
+    const populateStickyHeader = () => {
+      const navContent = document.querySelector(".main-menu")?.innerHTML;
+      const stickyHeaderContainer = document.querySelector(
+        ".sticky-header__content"
+      );
+      if (navContent && stickyHeaderContainer) {
         stickyHeaderContainer.innerHTML = navContent;
-      } catch (error) {
-        console.error("Error populating sticky header:", error);
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll);
+    populateMobileNav();
+    populateStickyHeader();
+
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    {
+      name: "Salt",
+      href: "/salt",
+      dropdown: [
+        {
+          name: "Salt Lamps",
+          href: "/salt_lamp",
+          icon: "^",
+          subItems: [
+            { name: "Geometric Salt Lamp", href: "/salt_lamp" },
+            { name: "Animal Salt Lamp", href: "/salt_lamp" },
+          ],
+        },
+        { name: "Salt Tiles", href: "/salt_tile" },
+        {
+          name: "Edible Rock Salt",
+          href: "/edible_salt",
+          icon: "^",
+          subItems: [
+            { name: "Edible Salt Jars & Pouches", href: "index.html" },
+          ],
+        },
+        { name: "Salt Cooking Block", href: "/salt_block" },
+        { name: "Animal Lick Salt", href: "/animal_lick_salt" },
+        {
+          name: "Compressed Animal Lick Salt",
+          href: "/compressed_animal_lick_salt",
+        },
+        { name: "Bath Salt", href: "/bath_salt" },
+        { name: "Salt Crockery", href: "/salt_crockery" },
+        {
+          name: "Aroma Therapy Salt Lamps",
+          icon: "^",
+          dropdown: [
+            { name: "Salt Diffuser", href: "/salt_diffuser" },
+            { name: "Salt Foot Detox", href: "/salt_foot_detox" },
+          ],
+        },
+        { name: "Salt Candle Holder", href: "/salt_candle_holder" },
+      ],
+    },
+    { name: "Rice", href: "/rice" },
+    { name: "Factory Tour", href: "/factory_tour" },
+  ];
+
+  const renderNavItems = (items) => {
+    return items.map((item, index) => (
+      <li
+        key={item.name}
+        className={`dropdown ${
+          item.dropdown
+            ? expandedDropdowns.has(item.name.toLowerCase())
+              ? "expanded"
+              : ""
+            : ""
+        }`}
+      >
+        <a href={item.href}>
+          {item.name}
+          {/* {item.dropdown && (
+            <button
+              aria-label="dropdown toggler"
+              className="mobile"
+              onClick={(e) => toggleDropdown(e, item.name.toLowerCase())}
+            >
+              <i className={`fa fa-angle-down ${expandedDropdowns.has(item.name.toLowerCase()) ? "expanded" : ""}`}></i>
+            </button>
+          )} */}
+        </a>
+        {item.dropdown && (
+          <ul>
+            {item.dropdown.map((subItem, subIndex) => (
+              <li
+                key={subIndex}
+                className={`dropdown ${subItem.subItems ? "dropdown" : ""}`}
+              >
+                <a href={subItem.href}>{subItem.name}</a>
+                {subItem.subItems && (
+                  <ul>
+                    {subItem.subItems.map((subSubItem, subSubIndex) => (
+                      <li key={subSubIndex}>
+                        <a href={subSubItem.href}>{subSubItem.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ));
+  };
 
   return (
     <div className="">
@@ -73,12 +183,21 @@ function Navbar() {
         <nav className="main-menu">
           <div className="main-menu__wrapper">
             <div className="container mx-auto">
-              <div className="main-menu__wrapper-inner">
+              <div className="main-menu__wrapper-inner h-[120px]">
+                <div className="">
+                  <a href="/">
+                    <img
+                      src="/assets/logo/salt-n-rice.png"
+                      alt="logo"
+                      className="h-[80px] w-[150px]"
+                    />
+                  </a>
+                </div>
                 <div className="main-menu__left">
                   <div className="">
-                    <a href="/">
-                      <img src="/assets/logo/ktk-logo.png" alt="logo" className="h-[80px] w-[145px]"/>
-                    </a>
+                    {/* <a href="/">
+                      <img src="/assets/logo/salt-n-rice.png" alt="logo" className="h-[80px] w-[145px]"/>
+                    </a> */}
                   </div>
                   <div className="main-menu__main-menu-box">
                     <a
@@ -86,251 +205,33 @@ function Navbar() {
                       className="mobile-nav__toggler"
                       onClick={toggleMobileNav}
                     >
-                      <div className="main-menu__nav-sidebar-icon">
+                      <div className="main-menu__nav-sidebar-icon !mr-0">
                         <span className="icon-dots-menu-one"></span>
                         <span className="icon-dots-menu-two"></span>
                         <span className="icon-dots-menu-three"></span>
                       </div>
                     </a>
-                    <ul className="main-menu__list">
-                      <li
-                        className={`dropdown ${
-                          expandedDropdowns.has("home") ? "expanded" : ""
-                        }`}
-                      >
-                        <a href="/">
-                          Home
-                          <button
-                            aria-label="dropdown toggler"
-                            onClick={(e) => toggleDropdown(e, "home")}
-                          >
-                            <i
-                              className={`fa fa-angle-down ${
-                                expandedDropdowns.has("home") ? "expanded" : ""
-                              }`}
-                            ></i>
-                          </button>
-                        </a>
-                        <ul>
-                          <li>
-                            <a href="index.html">Home One</a>
-                          </li>
-                          <li>
-                            <a href="index2.html">Home Two</a>
-                          </li>
-                          <li className="dropdown">
-                            <a href="#">Header Styles</a>
-                            <ul>
-                              <li>
-                                <a href="index.html">Header One</a>
-                              </li>
-                              <li>
-                                <a href="index2.html">Header Two</a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="/about">About</a>
-                      </li>
-                      <li
-                        className={`dropdown ${
-                          expandedDropdowns.has("pages") ? "expanded" : ""
-                        }`}
-                      >
-                        <a href="#">
-                          Pages
-                          <button
-                            aria-label="dropdown toggler"
-                            onClick={(e) => toggleDropdown(e, "pages")}
-                          >
-                            <i
-                              className={`fa fa-angle-down ${
-                                expandedDropdowns.has("pages") ? "expanded" : ""
-                              }`}
-                            ></i>
-                          </button>
-                        </a>
-                        <ul
-                          style={{
-                            display: expandedDropdowns.has("pages")
-                              ? "block"
-                              : "none",
-                          }}
-                        >
-                          <li>
-                            <a href="team.html">Team</a>
-                          </li>
-                          <li>
-                            <a href="team-carousel.html">Team Carousel</a>
-                          </li>
-                          <li>
-                            <a href="team-details.html">Team Details</a>
-                          </li>
-                          <li>
-                            <a href="testimonials.html">Testimonials</a>
-                          </li>
-                          <li>
-                            <a href="faq.html">Faq</a>
-                          </li>
-                          <li>
-                            <a href="404.html">404 Error</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li
-                        className={`dropdown ${
-                          expandedDropdowns.has("services") ? "expanded" : ""
-                        }`}
-                      >
-                        <a href="#">
-                          Services
-                          <button
-                            aria-label="dropdown toggler"
-                            onClick={(e) => toggleDropdown(e, "services")}
-                          >
-                            <i
-                              className={`fa fa-angle-down ${
-                                expandedDropdowns.has("services")
-                                  ? "expanded"
-                                  : ""
-                              }`}
-                            ></i>
-                          </button>
-                        </a>
-                        <ul
-                          style={{
-                            display: expandedDropdowns.has("services")
-                              ? "block"
-                              : "none",
-                          }}
-                        >
-                          <li>
-                            <a href="services.html">Services</a>
-                          </li>
-                          <li>
-                            <a href="services-carousel.html">
-                              Services Carousel
-                            </a>
-                          </li>
-                          <li>
-                            <a href="express-freight-solutions.html">
-                              Express Freight Solutions
-                            </a>
-                          </li>
-                          <li>
-                            <a href="quick-move-logistics.html">
-                              Quick Move Logistics
-                            </a>
-                          </li>
-                          <li>
-                            <a href="speedy-dispatch.html">Speedy Dispatch</a>
-                          </li>
-                          <li>
-                            <a href="swift-supply-chain.html">
-                              Swift Supply Chain
-                            </a>
-                          </li>
-                          <li>
-                            <a href="on-point-distribution.html">
-                              On Point Distribution
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li
-                        className={`dropdown ${
-                          expandedDropdowns.has("projects") ? "expanded" : ""
-                        }`}
-                      >
-                        <a href="#">
-                          Projects
-                          <button
-                            aria-label="dropdown toggler"
-                            onClick={(e) => toggleDropdown(e, "projects")}
-                          >
-                            <i
-                              className={`fa fa-angle-down ${
-                                expandedDropdowns.has("projects")
-                                  ? "expanded"
-                                  : ""
-                              }`}
-                            ></i>
-                          </button>
-                        </a>
-                        <ul
-                          style={{
-                            display: expandedDropdowns.has("projects")
-                              ? "block"
-                              : "none",
-                          }}
-                        >
-                          <li>
-                            <a href="projects.html">Projects</a>
-                          </li>
-                          <li>
-                            <a href="project-details.html">Project Details</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li
-                        className={`dropdown ${
-                          expandedDropdowns.has("blog") ? "expanded" : ""
-                        }`}
-                      >
-                        <a href="#">
-                          Blog
-                          <button
-                            aria-label="dropdown toggler"
-                            onClick={(e) => toggleDropdown(e, "blog")}
-                          >
-                            <i
-                              className={`fa fa-angle-down ${
-                                expandedDropdowns.has("blog") ? "expanded" : ""
-                              }`}
-                            ></i>
-                          </button>
-                        </a>
-                        <ul
-                          style={{
-                            display: expandedDropdowns.has("blog")
-                              ? "block"
-                              : "none",
-                          }}
-                        >
-                          <li>
-                            <a href="blog.html">Blog</a>
-                          </li>
-                          <li>
-                            <a href="blog-details.html">Blog Details</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="contact.html">Contact</a>
-                      </li>
+                    <ul
+                      className="main-menu__list"
+                      key={`main-menu-list-${navItems
+                        .map((item) => item.name)
+                        .join("-")}`}
+                    >
+                      {renderNavItems(navItems)}
                     </ul>
                   </div>
                 </div>
                 <div className="main-menu__right">
                   <div className="main-menu__search-nav-sidebar-btn-box">
-                    <div className="main-menu__search-box">
-                      <a
-                        href="#"
-                        className="main-menu__search search-toggler fas fa-search"
-                      ></a>
-                    </div>
-                    <div className="main-menu__nav-sidebar-icon">
-                      <a className="navSidebar-button" href="#">
-                        <span className="icon-dots-menu-one"></span>
-                        <span className="icon-dots-menu-two"></span>
-                        <span className="icon-dots-menu-three"></span>
-                      </a>
-                    </div>
-                    <div className="main-menu__btn-box">
-                      <a href="about.html" className="thm-btn main-menu__btn">
-                        Read more<span></span>
+                    <div className="main-menu__btn-box md:block">
+                      <a href="/contact" className="thm-btn main-menu__btn">
+                        Contact Us
+                        <span className="!relative">
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="absolute h-5 top-[15px] left-[15px]"
+                          />
+                        </span>
                       </a>
                     </div>
                   </div>
@@ -355,211 +256,32 @@ function Navbar() {
               className="mobile-nav__close mobile-nav__toggler"
               onClick={toggleMobileNav}
             >
-              <i className="fa fa-times"></i>
+              <FontAwesomeIcon icon={faXmark} />
             </span>
             <div className="logo-box">
-              <a href="index.html">
-                <img src="#" alt="logo" />
+              <a href="/">
+                <img
+                  src="/assets/logo/salt-n-rice.png"
+                  alt="logo"
+                  className="h-[80px] w-[150px]"
+                />
               </a>
             </div>
             <div className="mobile-nav__container">
-              <ul className="main-menu__list">
-                <li
-                  className={`dropdown ${
-                    expandedDropdowns.has("home") ? "expanded" : ""
-                  }`}
-                >
-                  <a href="#">Home</a>
-                  <ul>
-                    <li>
-                      <a href="index.html">Home One</a>
-                    </li>
-                    <li>
-                      <a href="index2.html">Home Two</a>
-                    </li>
-                    <li className="dropdown">
-                      <a href="#">Header Styles</a>
-                      <ul>
-                        <li>
-                          <a href="index.html">Header One</a>
-                        </li>
-                        <li>
-                          <a href="index2.html">Header Two</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="about.html">About</a>
-                </li>
-                <li
-                  className={`dropdown ${
-                    expandedDropdowns.has("pages") ? "expanded" : ""
-                  }`}
-                >
-                  <a href="#">
-                    Pages
-                    <button
-                      aria-label="dropdown toggler"
-                      onClick={(e) => toggleDropdown(e, "pages")}
-                    >
-                      <i
-                        className={`fa fa-angle-down ${
-                          expandedDropdowns.has("pages") ? "expanded" : ""
-                        }`}
-                      ></i>
-                    </button>
-                  </a>
-                  <ul
-                    style={{
-                      display: expandedDropdowns.has("pages")
-                        ? "block"
-                        : "none",
-                    }}
-                  >
-                    <li>
-                      <a href="team.html">Team</a>
-                    </li>
-                    <li>
-                      <a href="team-carousel.html">Team Carousel</a>
-                    </li>
-                    <li>
-                      <a href="team-details.html">Team Details</a>
-                    </li>
-                    <li>
-                      <a href="testimonials.html">Testimonials</a>
-                    </li>
-                    <li>
-                      <a href="faq.html">Faq</a>
-                    </li>
-                    <li>
-                      <a href="404.html">404 Error</a>
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  className={`dropdown ${
-                    expandedDropdowns.has("services") ? "expanded" : ""
-                  }`}
-                >
-                  <a href="#">
-                    Services
-                    <button
-                      aria-label="dropdown toggler"
-                      onClick={(e) => toggleDropdown(e, "services")}
-                    >
-                      <i
-                        className={`fa fa-angle-down ${
-                          expandedDropdowns.has("services") ? "expanded" : ""
-                        }`}
-                      ></i>
-                    </button>
-                  </a>
-                  <ul
-                    style={{
-                      display: expandedDropdowns.has("services")
-                        ? "block"
-                        : "none",
-                    }}
-                  >
-                    <li>
-                      <a href="services.html">Services</a>
-                    </li>
-                    <li>
-                      <a href="services-carousel.html">Services Carousel</a>
-                    </li>
-                    <li>
-                      <a href="express-freight-solutions.html">
-                        Express Freight Solutions
-                      </a>
-                    </li>
-                    <li>
-                      <a href="quick-move-logistics.html">
-                        Quick Move Logistics
-                      </a>
-                    </li>
-                    <li>
-                      <a href="speedy-dispatch.html">Speedy Dispatch</a>
-                    </li>
-                    <li>
-                      <a href="swift-supply-chain.html">Swift Supply Chain</a>
-                    </li>
-                    <li>
-                      <a href="on-point-distribution.html">
-                        On Point Distribution
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  className={`dropdown ${
-                    expandedDropdowns.has("projects") ? "expanded" : ""
-                  }`}
-                >
-                  <a href="#">
-                    Projects
-                    <button
-                      aria-label="dropdown toggler"
-                      onClick={(e) => toggleDropdown(e, "projects")}
-                    >
-                      <i
-                        className={`fa fa-angle-down ${
-                          expandedDropdowns.has("projects") ? "expanded" : ""
-                        }`}
-                      ></i>
-                    </button>
-                  </a>
-                  <ul
-                    style={{
-                      display: expandedDropdowns.has("projects")
-                        ? "block"
-                        : "none",
-                    }}
-                  >
-                    <li>
-                      <a href="projects.html">Projects</a>
-                    </li>
-                    <li>
-                      <a href="project-details.html">Project Details</a>
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  className={`dropdown ${
-                    expandedDropdowns.has("blog") ? "expanded" : ""
-                  }`}
-                >
-                  <a href="#">
-                    Blog
-                    <button
-                      aria-label="dropdown toggler"
-                      onClick={(e) => toggleDropdown(e, "blog")}
-                    >
-                      <i
-                        className={`fa fa-angle-down ${
-                          expandedDropdowns.has("blog") ? "expanded" : ""
-                        }`}
-                      ></i>
-                    </button>
-                  </a>
-                  <ul
-                    style={{
-                      display: expandedDropdowns.has("blog") ? "block" : "none",
-                    }}
-                  >
-                    <li>
-                      <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                      <a href="blog-details.html">Blog Details</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="contact.html">Contact</a>
-                </li>
-              </ul>
+              {/* Mobile navigation items can be rendered here if needed */}
+            </div>
+            <div className="main-menu__search-nav-sidebar-btn-box mt-5">
+              <div className="main-menu__btn-box md:block">
+                <a href="/contact" className="thm-btn main-menu__btn">
+                  Contact Us
+                  <span className="!relative">
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="absolute h-5 top-[15px] left-[15px]"
+                    />
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

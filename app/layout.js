@@ -21,8 +21,8 @@ import Footer from "./components/Footer/footer";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className=''
+      <body 
+      cz-shortcut-listen="true"
       >
         <Navbar/>
         {children}

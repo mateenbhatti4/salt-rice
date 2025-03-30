@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "industry": "Authentic Sourcing",
+    "description": "Directly procured from Himalayan farmers and miners to ensure zero additives and 100% natural quality.",
+    "icon": "icon-crane"
+  },
+  {
+    "id": 2,
+    "industry": "Strict Quality Control",
+    "description": "Every batch is tested for purity, texture, and compliance with international export standards.",
+    "icon": "icon-shopping-cart"
+  },
+  {
+    "id": 3,
+    "industry": "Sustainable Practicess",
+    "description": "We support ethical farming and eco-friendly mining to protect the Himalayan ecosystem.",
+    "icon": "icon-chef-hat"
+  },
+  {
+    "id": 4,
+    "industry": "Global Reach",
+    "description": "Reliable logistics partners ensure timely, secure delivery to your doorstep, wherever you are.",
+    "icon": "icon-medicine"
+  },
+  {
+    "id": 5,
+    "industry": "Traceable Supply Chain",
+    "description": "From Himalayan source to your location, every step is documented for complete transparency and quality assurance.",
+    "icon": "icon-tractor"
+  },
+  {
+    "id": 6,
+    "industry": "Competitive Export Solutions",
+    "description": "Tailored packaging, bulk pricing, and flexible shipping options designed specifically for international buyers.",
+    "icon": "icon-factory"
+  }
+]
