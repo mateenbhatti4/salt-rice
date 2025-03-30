@@ -61,7 +61,7 @@ function Footer() {
                 <div className="footer-widget-two__logo">
                   <a href="index.html">
                     <img
-                      src="assets/logo/salt-n-rice.png"
+                      src="assets/logo/saltn-rice.png"
                       alt=""
                       className="h-[115px] w-[230px]"
                     />

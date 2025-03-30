@@ -187,7 +187,7 @@ function Navbar() {
                 <div className="">
                   <a href="/">
                     <img
-                      src="/assets/logo/salt-n-rice.png"
+                      src="/assets/logo/saltn-rice.png"
                       alt="logo"
                       className="h-[80px] w-[150px]"
                     />
@@ -261,7 +261,7 @@ function Navbar() {
             <div className="logo-box">
               <a href="/">
                 <img
-                  src="/assets/logo/salt-n-rice.png"
+                  src="/assets/logo/saltn-rice.png"
                   alt="logo"
                   className="h-[80px] w-[150px]"
                 />
