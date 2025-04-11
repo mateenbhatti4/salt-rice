@@ -20,7 +20,7 @@ const WhyWe = () => {
         <div className="container mx-auto ">
           <h2 className="text-3xl font-bold text-primary mb-6">Our Story</h2>
           <p className="text-lg text-gray-700 mb-8 font-normal">
-            Founded in 2025, we began with a simple mission: to share the
+            Founded in 2019, we began with a simple mission: to share the
             authentic taste and wellness benefits of Himalayan salt and rice
             with the world. What started as a small venture has grown into a
             trusted export partner for businesses and consumers who value

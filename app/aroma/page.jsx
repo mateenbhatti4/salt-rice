@@ -4,7 +4,7 @@ import SaltProducts from '../components/SaltProducts/saltProducts'
 const page = () => {
   return (
     <>
-    <SaltProducts selectedCategory={"compressedAnimalLickSalt"}/>
+    <SaltProducts selectedCategory={"aroma"}/>
     </>
   )
 }

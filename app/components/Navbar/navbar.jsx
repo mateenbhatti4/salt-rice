@@ -1,6 +1,7 @@
 "use client";
 import { faXmark, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 function Navbar() {
@@ -89,37 +90,31 @@ function Navbar() {
       dropdown: [
         {
           name: "Salt Lamps",
-          href: "/salt_lamp",
+          href: "/salt-lamp",
           icon: "^",
           subItems: [
-            { name: "Geometric Salt Lamp", href: "/salt_lamp" },
-            { name: "Animal Salt Lamp", href: "/salt_lamp" },
+            { name: "Geometric Salt Lamp", href: "/salt-lamp/geometrical" },
+            { name: "Animal Salt Lamp", href: "/salt-lamp/animal" },
           ],
         },
-        { name: "Salt Tiles", href: "/salt_tile" },
+        { name: "Salt Tiles", href: "/salt-tile" },
         {
           name: "Edible Rock Salt",
-          href: "/edible_salt",
+          href: "/edible-salt",
           icon: "^",
           subItems: [
-            { name: "Edible Salt Jars & Pouches", href: "index.html" },
+            { name: "Edible Salt Jars", href: "/edible-salt/jars" },
+            { name: "Edible Salt Pouches", href: "/edible-salt/pouches" },
           ],
         },
         { name: "Salt Cooking Block", href: "/salt_block" },
         { name: "Animal Lick Salt", href: "/animal_lick_salt" },
-        {
-          name: "Compressed Animal Lick Salt",
-          href: "/compressed_animal_lick_salt",
-        },
         { name: "Bath Salt", href: "/bath_salt" },
         { name: "Salt Crockery", href: "/salt_crockery" },
         {
           name: "Aroma Therapy Salt Lamps",
           icon: "^",
-          dropdown: [
-            { name: "Salt Diffuser", href: "/salt_diffuser" },
-            { name: "Salt Foot Detox", href: "/salt_foot_detox" },
-          ],
+          href: "/aroma",
         },
         { name: "Salt Candle Holder", href: "/salt_candle_holder" },
       ],
@@ -140,7 +135,7 @@ function Navbar() {
             : ""
         }`}
       >
-        <a href={item.href}>
+        <Link href={item.href}>
           {item.name}
           {/* {item.dropdown && (
             <button
@@ -151,7 +146,7 @@ function Navbar() {
               <i className={`fa fa-angle-down ${expandedDropdowns.has(item.name.toLowerCase()) ? "expanded" : ""}`}></i>
             </button>
           )} */}
-        </a>
+        </Link>
         {item.dropdown && (
           <ul>
             {item.dropdown.map((subItem, subIndex) => (
@@ -159,7 +154,8 @@ function Navbar() {
                 key={subIndex}
                 className={`dropdown ${subItem.subItems ? "dropdown" : ""}`}
               >
-                <a href={subItem.href}>{subItem.name}</a>
+                <Link href={subItem.href}>{subItem.name}</Link>
+                {/* {console.log(subItem.href)} */}
                 {subItem.subItems && (
                   <ul>
                     {subItem.subItems.map((subSubItem, subSubIndex) => (
@@ -259,13 +255,13 @@ function Navbar() {
               <FontAwesomeIcon icon={faXmark} />
             </span>
             <div className="logo-box">
-              <a href="/">
+              <Link href="/">
                 <img
                   src="/assets/logo/saltn-rice.png"
                   alt="logo"
                   className="h-[80px] w-[150px]"
                 />
-              </a>
+              </Link>
             </div>
             <div className="mobile-nav__container">
               {/* Mobile navigation items can be rendered here if needed */}

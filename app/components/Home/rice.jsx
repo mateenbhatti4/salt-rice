@@ -7,7 +7,7 @@ const rice = () => {
     <section className="why-choose-one">
       <div className="container mx-auto px-4">
         <div className="lg:flex gap-20 py-28">
-          <div className="">
+          <div className="w-full">
             <div className="why-choose-one__right">
               <div
                 className="why-choose-one__img wow slideInRight"

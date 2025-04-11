@@ -59,9 +59,9 @@ function Footer() {
             >
               <div className="footer-widget-two__column footer-widget-two__about">
                 <div className="footer-widget-two__logo">
-                  <a href="index.html">
+                  <a href="/">
                     <img
-                      src="assets/logo/saltn-rice.png"
+                      src="/assets/logo/saltn-rice.png"
                       alt=""
                       className="h-[115px] w-[230px]"
                     />
