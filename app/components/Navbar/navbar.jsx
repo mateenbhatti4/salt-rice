@@ -257,7 +257,7 @@ function Navbar() {
             <div className="logo-box">
               <Link href="/">
                 <img
-                  src="/assets/logo/saltn-rice.png"
+                  src="/assets/logo/saltn-rice-v2.png"
                   alt="logo"
                   className="h-[80px] w-[150px]"
                 />
