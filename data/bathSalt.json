@@ -10,38 +10,24 @@
   "products": [
     {
       "id": 1,
-      "image": "/assets/bathSalt/1.webp",
+      "image": "/assets/bathSalt/1.png",
       "shape": "Soap - Heart",
       "weight": "160 gr",
       "size": "4\" x 2.5\""
     },
     {
       "id": 2,
-      "image": "/assets/bathSalt/1.webp",
+      "image": "/assets/bathSalt/2.png",
       "shape": "Salt Balls",
       "weight": "190 gr",
       "size": "2\" x 2\""
     },
     {
       "id": 3,
-      "image": "/assets/bathSalt/1.webp",
-      "shape": "Deo Stick",
-      "weight": "150 gr",
-      "size": "4\" x 2\""
-    },
-    {
-      "id": 4,
-      "image": "/assets/bathSalt/1.webp",
+      "image": "/assets/bathSalt/3.png",
       "shape": "Soap Shape",
       "weight": "200 gr",
       "size": "4\" x 2\""
-    },
-    {
-      "id": 5,
-      "image": "/assets/bathSalt/1.webp",
-      "shape": "Salt Plate",
-      "weight": "1 - 2 kg",
-      "size": "8\" x 4\" x 1\""
     }
   ],
   "faqs": [

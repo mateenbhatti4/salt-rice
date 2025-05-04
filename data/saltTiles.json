@@ -10,51 +10,21 @@
   "products": [
     {
       "id": 1,
-      "image": "/assets/salt-lamps/1.webp",
-      "dimension": "4\" x 4\" x 1\"",
-      "weight": "500g"
-    },
-    {
-      "id": 2,
-      "image": "/assets/salt-lamps/1.webp",
-      "dimension": "8\" x 4\" x 1\"",
+      "image": "/assets/saltTiles/1.png",
+      "dimension": "8\" x 4\" x 2\"",
       "weight": "1.1kg"
     },
     {
-      "id": 3,
-      "image": "/assets/salt-lamps/1.webp",
-      "dimension": "8\" x 4\" x 2\"",
+      "id": 2,
+      "image": "/assets/saltTiles/2.png",
+      "dimension": "8\" x 4\" x 1\"",
       "weight": "2.4kg"
     },
     {
-      "id": 4,
-      "image": "/assets/salt-lamps/1.webp",
-      "dimension": "8\" x 8\" x 1\"",
-      "weight": "2.25kg"
-    },
-    {
-      "id": 5,
-      "image": "/assets/salt-lamps/1.webp",
+      "id": 3,
+      "image": "/assets/saltTiles/3.png",
       "dimension": "8\" x 8\" x 2\"",
       "weight": "5kg"
-    },
-    {
-      "id": 6,
-      "image": "/assets/salt-lamps/1.webp",
-      "dimension": "10\" x 6\" x 2\"",
-      "weight": "4.5kg"
-    },
-    {
-      "id": 7,
-      "image": "/assets/salt-lamps/1.webp",
-      "dimension": "12\" x 8\" x 1.5\"",
-      "weight": "5.5kg"
-    },
-    {
-      "id": 8,
-      "image": "/assets/salt-lamps/1.webp",
-      "dimension": "12\" x 8\" x 2\"",
-      "weight": "6.5kg"
     }
   ],
   "faqs": [

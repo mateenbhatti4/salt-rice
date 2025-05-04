@@ -11,7 +11,7 @@ const RProducts = () => {
             <span className="section-title__tagline">Latest Blog</span>
           </div>
           <h2 className="section-title__title">
-            Streamlining your supply<br /> chain processes
+            Check our latest catalogue!
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

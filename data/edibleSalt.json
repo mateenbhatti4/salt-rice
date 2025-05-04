@@ -10,45 +10,38 @@
   "products": [
     {
       "id": 1,
-      "image": "/assets/edibleSalt/1.webp",
+      "image": "/assets/edibleSalt/1.png",
       "size": "20 - 50 (mesh)",
       "quantity": "1 Ton",
       "color": "Light Pink"
     },
     {
       "id": 2,
-      "image": "/assets/edibleSalt/1.webp",
+      "image": "/assets/edibleSalt/2.png",
       "size": "20 - 50 (mesh)",
       "quantity": "1 Ton",
       "color": "Medium Pink"
     },
     {
       "id": 3,
-      "image": "/assets/edibleSalt/1.webp",
+      "image": "/assets/edibleSalt/3.png",
       "size": "20 - 50 (mesh)",
       "quantity": "1 Ton",
       "color": "Pink Powder"
     },
     {
       "id": 4,
-      "image": "/assets/edibleSalt/1.webp",
+      "image": "/assets/edibleSalt/4.png",
       "size": "1 - 2 mm",
       "quantity": "1 Ton",
       "color": "Light Pink"
     },
     {
       "id": 5,
-      "image": "/assets/edibleSalt/1.webp",
+      "image": "/assets/edibleSalt/5.png",
       "size": "2 - 5 mm",
       "quantity": "1 Ton",
       "color": "Crystal Salt"
-    },
-    {
-      "id": 6,
-      "image": "/assets/edibleSalt/1.webp",
-      "size": "5 - 7 mm",
-      "quantity": "1 Ton",
-      "color": "Light Pink"
     }
   ],
   "faqs": [

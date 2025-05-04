@@ -32,33 +32,21 @@
   "products": [
     {
       "id": 1,
-      "image": "/assets/saltCrockery/1.webp",
-      "shape": "Salt Pestle",
-      "dimension": "6\" x 4\""
+      "image": "/assets/saltCrockery/1.png",
+      "shape": "Morter & Pestle",
+      "dimension": "4.6\" x 4.4\""
     },
     {
       "id": 2,
-      "image": "/assets/saltCrockery/1.webp",
-      "shape": "Salad Bowl",
-      "dimension": "6\""
-    },
-    {
-      "id": 3,
-      "image": "/assets/saltCrockery/1.webp",
-      "shape": "Serving Plate",
-      "dimension": "6\" x 1.5\""
-    },
-    {
-      "id": 4,
-      "image": "/assets/saltCrockery/1.webp",
+      "image": "/assets/saltCrockery/2.png",
       "shape": "Shot Glass",
       "dimension": "3\""
     },
     {
-      "id": 5,
-      "image": "/assets/saltCrockery/1.webp",
-      "shape": "Mortar & Pestle",
-      "dimension": "4.6\" x 4.4\""
+      "id": 3,
+      "image": "/assets/saltCrockery/3.png",
+      "shape": "Salad Bowl",
+      "dimension": "6\""
     }
   ]
 }

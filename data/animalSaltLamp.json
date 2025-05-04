@@ -10,51 +10,45 @@
   "products": [
     {
       "id": 1,
-      "image": "/assets/salt-lamps/1.webp",
+      "image": "/assets/salt-lamps/animal/1.jpg",
       "pack": "8 pcs",
-      "weight": "2-3 kg"
+      "weight": "2-3 kg",
+      "size": "7″ x 5″ x 3″"
     },
     {
       "id": 2,
-      "image": "/assets/salt-lamps/1.webp",
+      "image": "/assets/salt-lamps/animal/2.png",
       "pack": "8 pcs",
-      "weight": "2-3 kg"
+      "weight": "2-3 kg",
+      "size": "7″ x 5″ x 3″"
     },
     {
       "id": 3,
-      "image": "/assets/salt-lamps/1.webp",
+      "image": "/assets/salt-lamps/animal/3.png",
       "pack": "8 pcs",
-      "weight": "2-3 kg"
-    },
-    {
-      "id": 4,
-      "image": "/assets/salt-lamps/1.webp",
-      "pack": "8 pcs",
-      "weight": "2-3 kg"
+      "weight": "2-3 kg",
+      "size": "7″ x 5″ x 3″"
     },
     {
       "id": 5,
-      "image": "/assets/salt-lamps/1.webp",
+      "image": "/assets/salt-lamps/animal/5.png",
       "pack": "8 pcs",
-      "weight": "2-3 kg"
+      "weight": "2-3 kg",
+      "size": "7″ x 5″ x 3″"
     },
     {
       "id": 6,
-      "image": "/assets/salt-lamps/1.webp",
+      "image": "/assets/salt-lamps/animal/6.png",
       "pack": "8 pcs",
-      "weight": "2-3 kg"
+      "weight": "2-3 kg",
+      "size": "7″ x 5″ x 3″"
     },
     {
       "id": 7,
-      "image": "/assets/salt-lamps/1.webp",
+      "image": "/assets/salt-lamps/animal/7.png",
       "pack": "8 pcs",
-      "weight": "2-3 kg"
-    },
-    {
-      "id": 8,
-      "image": "/assets/salt-lamps/1.webp",
-      "pack": "8 pcs",
-      "weight": "2-3 kg"
+      "weight": "2-3 kg",
+      "size": "7″ x 5″ x 3″"
     }
   ],
   "faqs": [

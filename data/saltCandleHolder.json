@@ -10,51 +10,33 @@
   "products": [
     {
       "id": 1,
-      "image": "/assets/saltCandleHolder/1.webp",
+      "image": "/assets/saltCandleHolder/1.png",
       "weight": "0.7 - 1 kg",
       "dimension": "4\" x 3\""
     },
     {
       "id": 2,
-      "image": "/assets/saltCandleHolder/1.webp",
+      "image": "/assets/saltCandleHolder/2.png",
       "weight": "0.7 - 1 kg",
       "dimension": "4\" x 3\""
     },
     {
       "id": 3,
-      "image": "/assets/saltCandleHolder/1.webp",
+      "image": "/assets/saltCandleHolder/3.png",
       "weight": "0.7 - 1 kg",
       "dimension": "4\" x 3\""
     },
     {
       "id": 4,
-      "image": "/assets/saltCandleHolder/1.webp",
-      "weight": "0.7 - 1 kg",
-      "dimension": "4\" x 3\""
+      "image": "/assets/saltCandleHolder/4.png",
+      "weight": "0.8 - 1.2 kg",
+      "dimension": "9\" x 3.5\""
     },
     {
       "id": 5,
-      "image": "/assets/saltCandleHolder/1.webp",
+      "image": "/assets/saltCandleHolder/5.png",
       "weight": "0.7 - 1 kg",
       "dimension": "4\" x 3\""
-    },
-    {
-      "id": 6,
-      "image": "/assets/saltCandleHolder/1.webp",
-      "weight": "0.7 - 1 kg",
-      "dimension": "4\" x 3\""
-    },
-    {
-      "id": 7,
-      "image": "/assets/saltCandleHolder/1.webp",
-      "weight": "0.7 - 1 kg",
-      "dimension": "6\""
-    },
-    {
-      "id": 8,
-      "image": "/assets/saltCandleHolder/1.webp",
-      "weight": "0.7 - 1 kg",
-      "dimension": "8\""
     }
   ],
   "faqs": [

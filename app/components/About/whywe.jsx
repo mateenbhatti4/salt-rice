@@ -9,10 +9,16 @@ const WhyWe = () => {
           Purity from the Himalayas to the World
         </h2>
         <p className="text-lg text-gray-700 font-normal">
-          At <span className="text-[#c11425]">Salt'n Grains</span>, we are passionate about delivering the finest
+          {/* At <span className="text-[#c11425]">Salt'n Grains</span>, we are passionate about delivering the finest
           Himalayan salt and premium rice to global markets. Sourced from the
           pristine mountains and fertile regions of the Himalayas, our products
-          embody nature's purity, tradition, and unmatched quality.
+          embody nature's purity, tradition, and unmatched quality. */}
+          At <span className="text-[#c11425]">Salt'n Grains</span>, a proud
+          venture of <span className="text-[#c11425]">KTK International</span>,
+          we are dedicated to delivering the finest Himalayan salt and premium
+          rice to global markets. Sourced from the pristine mountains and
+          fertile valleys of the Himalayas, our products reflect nature’s
+          purity, cultural heritage, and uncompromising quality.
         </p>
       </section>
 

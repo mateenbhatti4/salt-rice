@@ -1,23 +1,24 @@
 "use client";
 import React from "react";
-import products from "@/data/saltproducts.json"; 
+import products from "@/data/saltproducts.json";
 
 const Products = () => {
- 
   return (
     <section className="blog-one">
       <div className="container mx-auto px-4">
         <div className="section-title text-center">
           <div className="section-title__tagline-box">
-            <span className="section-title__tagline">Latest Blog</span>
+            <span className="section-title__tagline">catalogue</span>
           </div>
-          <h2 className="section-title__title">
-            Streamlining your supply<br /> chain processes
-          </h2>
+          <h2 className="section-title__title">Check our latest catalogue!</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {products.map((product) => (
-            <div key={product.id} className="wow fadeInLeft" data-wow-delay="100ms">
+            <div
+              key={product.id}
+              className="wow fadeInLeft"
+              data-wow-delay="100ms"
+            >
               <div className="blog-one__single">
                 <div className="blog-one__img-box">
                   <div className="blog-one__img">

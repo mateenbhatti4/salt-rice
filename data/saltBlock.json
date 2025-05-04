@@ -10,59 +10,24 @@
   "products": [
     {
       "id": 1,
-      "image": "/assets/saltBlock/1.webp",
-      "packing": "24 pcs",
+      "image": "/assets/saltBlock/1.png",
+      "pack": "24 pcs",
       "weight": "1-2 kg",
       "size": "8\" x 4\" x 1\""
     },
     {
       "id": 2,
-      "image": "/assets/saltBlock/1.webp",
-      "packing": "12 pcs",
-      "weight": "2.25 kg",
-      "size": "8\" x 4\" x 2\""
-    },
-    {
-      "id": 3,
-      "image": "/assets/saltBlock/1.webp",
-      "packing": "12 pcs",
-      "weight": "2.25 kg",
-      "size": "8\" x 8\" x 1\""
-    },
-    {
-      "id": 4,
-      "image": "/assets/saltBlock/1.webp",
-      "packing": "8 pcs",
+      "image": "/assets/saltBlock/2.png",
+      "pack": "8 pcs",
       "weight": "4 kg",
       "size": "8\" x 8\" x 1.5\""
     },
     {
-      "id": 5,
-      "image": "/assets/saltBlock/1.webp",
-      "packing": "6 pcs",
-      "weight": "4 kg",
+      "id": 3,
+      "image": "/assets/saltBlock/3.png",
+      "pack": "6 pcs",
+      "weight": "4.25 kg",
       "size": "8\" x 8\" x 2\""
-    },
-    {
-      "id": 6,
-      "image": "/assets/saltBlock/1.webp",
-      "packing": "6 pcs",
-      "weight": "4.5 kg",
-      "size": "8\" x 8\" x 2\""
-    },
-    {
-      "id": 7,
-      "image": "/assets/saltBlock/1.webp",
-      "packing": "4 pcs",
-      "weight": "5.5 kg",
-      "size": "10\" x 6\" x 2\""
-    },
-    {
-      "id": 8,
-      "image": "/assets/saltBlock/1.webp",
-      "packing": "5 pcs",
-      "weight": "5-6 kg",
-      "size": "12\" x 8\" x 1.5\""
     }
   ],
   "faqs": [

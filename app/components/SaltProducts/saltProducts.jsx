@@ -79,12 +79,9 @@ const SaltProducts = ({ selectedCategory }) => {
         <div className="container mx-auto px-4">
           <div className="section-title text-center">
             <div className="section-title__tagline-box">
-              <span className="section-title__tagline">Latest Blog</span>
+              <span className="section-title__tagline">Products</span>
             </div>
-            <h2 className="section-title__title">
-              Streamlining your supply
-              <br /> chain processes
-            </h2>
+            <h2 className="section-title__title">Check our latest products!</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {data.products.map((product) => (
@@ -104,6 +101,10 @@ const SaltProducts = ({ selectedCategory }) => {
                       "saltLamp",
                       "animalLickSalt",
                       "compressedAnimalLickSalt",
+                      "saltGeometricLamp",
+                      "animalSaltLamp",
+                      "saltBlock",
+                      "aroma"
                     ].includes(selectedCategory) && (
                       <>
                         <div className="blog-one__title2 flex justify-between p-3">
@@ -113,6 +114,22 @@ const SaltProducts = ({ selectedCategory }) => {
                         <div className="blog-one__title2 flex justify-between p-3">
                           <h3>Weight</h3>
                           <h4>{product.weight}</h4>
+                        </div>
+                      </>
+                    )}
+                    {selectedCategory === "saltBlock" && (
+                      <>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Size L/W/H</h3>
+                          <h4>{product.size}</h4>
+                        </div>
+                      </>
+                    )}
+                    {selectedCategory === "animalSaltLamp" && (
+                      <>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Size L/W/H</h3>
+                          <h4>{product.size}</h4>
                         </div>
                       </>
                     )}
@@ -128,6 +145,62 @@ const SaltProducts = ({ selectedCategory }) => {
                         </div>
                       </>
                     )}
+                    {selectedCategory === "edibleSalt" && (
+                      <>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Size</h3>
+                          <h4>{product.size}</h4>
+                        </div>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Quantity</h3>
+                          <h4>{product.quantity}</h4>
+                        </div>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Color</h3>
+                          <h4>{product.color}</h4>
+                        </div>
+                      </>
+                    )}
+                    {selectedCategory === "jars" && (
+                      <>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Color</h3>
+                          <h4>{product.color}</h4>
+                        </div>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Weight</h3>
+                          <h4>{product.weight}</h4>
+                        </div>
+                      </>
+                    )}
+                    {selectedCategory === "pouches" && (
+                      <>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Color</h3>
+                          <h4>{product.color}</h4>
+                        </div>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Weight</h3>
+                          <h4>{product.weight}</h4>
+                        </div>
+                      </>
+                    )}
+                    {selectedCategory === "bathSalt" && (
+                      <>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Shape</h3>
+                          <h4>{product.shape}</h4>
+                        </div>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Weight</h3>
+                          <h4>{product.weight}</h4>
+                        </div>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Size L/W/H</h3>
+                          <h4>{product.size}</h4>
+                        </div>
+                      </>
+                    )}
                     {selectedCategory === "saltCrockery" && (
                       <>
                         <div className="blog-one__title2 flex justify-between p-3">
@@ -136,6 +209,18 @@ const SaltProducts = ({ selectedCategory }) => {
                         </div>
                         <div className="blog-one__title2 flex justify-between p-3">
                           <h3>Size L/W</h3>
+                          <h4>{product.dimension}</h4>
+                        </div>
+                      </>
+                    )}
+                    {selectedCategory === "saltCandleHolder" && (
+                      <>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Weight</h3>
+                          <h4>{product.weight}</h4>
+                        </div>
+                        <div className="blog-one__title2 flex justify-between p-3">
+                          <h3>Size L/W/H</h3>
                           <h4>{product.dimension}</h4>
                         </div>
                       </>
