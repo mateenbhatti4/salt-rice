@@ -12,7 +12,13 @@
       "id": 1,
       "image": "/assets/salt-lamps/1.png",
       "pack": "1-8 pcs",
-      "weight": "1-12 kg"
+      "weight": "1-6 kg"
+    },
+    {
+      "id": 2,
+      "image": "/assets/salt-lamps/2.jpg",
+      "pack": "4-8 pcs",
+      "weight": "7-12 kg"
     }
   ],
   "faqs": [

@@ -120,6 +120,7 @@ function Navbar() {
       ],
     },
     { name: "Rice", href: "/rice" },
+    // { name: "Certifications", href: "/certifications" },
     { name: "Factory Tour", href: "/factory_tour" },
   ];
 

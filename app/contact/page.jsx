@@ -69,10 +69,10 @@ const page = () => {
                   <h3 className="text-lg font-semibold">Send us an Email</h3>
                   <p>
                     <a
-                      href="mailto:info@saltngrains.com"
+                      href="mailto:saltngrains@gmail.com"
                       className="text-blue-500"
                     >
-                      info@saltngrains.com
+                      saltngrains@gmail.com
                     </a>
                   </p>
                 </div>

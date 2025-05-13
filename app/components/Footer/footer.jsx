@@ -140,8 +140,8 @@ function Footer() {
                       </span>
                     </div>
                     <p>
-                      <a href="mailto:info@saltngrains.com">
-                        info@saltngrains.com
+                      <a href="mailto:saltngrains@gmail.com">
+                        saltngrains@gmail.com
                       </a>
                     </p>
                   </li>
