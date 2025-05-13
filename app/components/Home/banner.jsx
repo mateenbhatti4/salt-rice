@@ -48,7 +48,7 @@ function Banner() {
                       <div className="main-slider__call-number">
                         <p>Have Questions?</p>
                         <h5>
-                          <a href="tel:+1234567890">+92 300 4284563</a>
+                          <a href="tel:+923104873607">+92 310 4873607</a>
                         </h5>
                       </div>
                     </div>

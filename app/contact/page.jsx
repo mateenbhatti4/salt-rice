@@ -34,8 +34,8 @@ const page = () => {
                   <h3 className="text-lg font-semibold">Let's Talk</h3>
                   <p>
                     Phone number:{" "}
-                    <a href="tel:+923004284563" className="text-blue-500">
-                      +92 300 4284563
+                    <a href="tel:+923104873607" className="text-blue-500">
+                      +92 310 4873607
                     </a>
                   </p>
                 </div>
