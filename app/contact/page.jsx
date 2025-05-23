@@ -8,6 +8,14 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
+export const metadata = {
+  title: "Contact - Himalayan Salt | Best Salt Manufactures in Pakistan",
+  description: "Purity from the Himalayas to the World",
+  keywords: "salt'n grains, salt exporter, rice exporter, grains, saltngrains, saltngrains contact",
+  author: "Salt'n grains",
+  // viewport: "width=device-width, initial-scale=1.0",
+};
+
 const page = () => {
   return (
     <>

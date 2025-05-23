@@ -3,6 +3,7 @@ import { faXmark, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation"; 
 
 function Navbar() {
   const [isMobileNavExpanded, setIsMobileNavExpanded] = useState(false);
@@ -68,7 +69,55 @@ function Navbar() {
         ".sticky-header__content"
       );
       if (navContent && stickyHeaderContainer) {
+        // Create a MutationObserver to watch for changes
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.type === 'childList' || mutation.type === 'characterData') {
+              const updatedContent = document.querySelector(".main-menu")?.innerHTML;
+              if (updatedContent) {
+                // Update sticky header content
+                stickyHeaderContainer.innerHTML = updatedContent;
+                
+                // Update classes for active links
+                const mainMenuLinks = document.querySelectorAll(".main-menu__list dropdown a");
+                const stickyHeaderLinks = stickyHeaderContainer.querySelectorAll("a");
+                
+                mainMenuLinks.forEach((mainLink, index) => {
+                  const stickyLink = stickyHeaderLinks[index];
+                  if (stickyLink) {
+                    // Copy all classes from main menu link to sticky header link
+                    stickyLink.className = mainLink.className;
+                  }
+                });
+              }
+            }
+          });
+        });
+
+        // Start observing the main menu for changes
+        const mainMenu = document.querySelector(".main-menu");
+        if (mainMenu) {
+          observer.observe(mainMenu, {
+            childList: true,
+            subtree: true,
+            characterData: true,
+            attributes: true,
+            attributeFilter: ['class']
+          });
+        }
+        // Initial content population
         stickyHeaderContainer.innerHTML = navContent;
+        
+        // Initial class synchronization
+        const mainMenuLinks = document.querySelectorAll(".main-menu a");
+        const stickyHeaderLinks = stickyHeaderContainer.querySelectorAll("a");
+        
+        mainMenuLinks.forEach((mainLink, index) => {
+          const stickyLink = stickyHeaderLinks[index];
+          if (stickyLink) {
+            stickyLink.className = mainLink.className;
+          }
+        });
       }
     };
 
@@ -79,7 +128,7 @@ function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [usePathname()]);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -136,7 +185,10 @@ function Navbar() {
             : ""
         }`}
       >
-        <Link href={item.href}>
+        <Link 
+          href={item.href}
+          className={`${usePathname() === item.href ? 'color' : ''}`}
+        >
           {item.name}
           {/* {item.dropdown && (
             <button
@@ -155,7 +207,7 @@ function Navbar() {
                 key={subIndex}
                 className={`dropdown ${subItem.subItems ? "dropdown" : ""}`}
               >
-                <Link href={subItem.href}>{subItem.name}</Link>
+                <Link href={subItem.href} >{subItem.name}</Link>
                 {/* {console.log(subItem.href)} */}
                 {subItem.subItems && (
                   <ul>
