@@ -116,10 +116,10 @@ function Footer() {
                     <a href="/factory_tour">Factory Tour</a>
                   </li>
                   <li className="terms-policy !hidden">
-                    <a href="/">Terms & Condition</a>
+                    <a href="/terms">Terms & Condition</a>
                   </li>
                   <li className="terms-policy !hidden">
-                    <a href="/">Privacy Policy</a>
+                    <a href="/shipping-policy">Shipping Policy</a>
                   </li>
                 </ul>
               </div>
@@ -177,10 +177,10 @@ function Footer() {
             </p>
             <ul className="list-unstyled site-footer-two__bottom-menu">
               <li>
-                <a href="/">Terms & Condition</a>
+                <a href="/terms">Terms & Condition</a>
               </li>
               <li>
-                <a href="/">Privacy Policy</a>
+                <a href="/shipping-policy">Shipping Policy</a>
               </li>
             </ul>
           </div>

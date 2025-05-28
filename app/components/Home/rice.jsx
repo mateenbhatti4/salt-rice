@@ -35,7 +35,7 @@ const rice = () => {
                 adesigning the a structures such
               </p>
               <div className="why-choose-one__btn-box">
-                <a href="about.html" className="thm-btn why-choose-one__btn">
+                <a href="/about" className="thm-btn why-choose-one__btn">
                   Read more
                   <span className="!relative">
                     <FontAwesomeIcon

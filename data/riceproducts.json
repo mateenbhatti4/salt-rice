@@ -1,19 +1,19 @@
 [
     {
         "id": 1,
-        "title": "1121 Parboiled Rice Sella Quality A 2-3 % Broken",
+        "title": "1121 Parboiled Basmati Rice Sella Quality A 2-3 % Broken",
         "image": "/assets/rice/1.jpg",
         "link": "/a_sela"
     },
     {
         "id": 2,
-        "title": "1121 Parboiled Rice Sella Quality A+ 2-3% Broken",
+        "title": "1121 Parboiled Basmati Rice Sella Quality A+ 2-3% Broken",
         "image": "/assets/rice/2.jpg",
         "link": "/aPlus_sela"
     },
     {
         "id": 3,
-        "title": "1121 Steam Rice 2-3% Broken",
+        "title": "1121 Steam Basmati Rice 2-3% Broken",
         "image": "/assets/rice/3.jpg",
         "link": "/aPlusPlus_sela"
     },
@@ -25,7 +25,7 @@
     },
     {
         "id": 5,
-        "title": "Pakistan Rice 386 Parboiled Sella 5% Broken",
+        "title": "Pakistan Basmati Rice 386 Parboiled Sella 5% Broken",
         "image": "/assets/rice/5.jpg",
         "link": "/a_sela"
     }
