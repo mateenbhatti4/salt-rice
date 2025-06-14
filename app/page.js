@@ -12,7 +12,7 @@ import Testimonials from "./components/Home/testimonials";
 export const metadata = {
   title: "Salt'n Grains - Himalayan Salt | Best Salt Manufactures in Pakistan",
   description: "Pure Himalayan Salt & Finest Basmati Rice",
-  keywords: "salt'n grains, salt exporter, rice exporter, grains, saltngrains",
+  keywords: "salt'n grains, salt exporter, rice exporter in uae, grains, saltngrains",
   author: "Salt'n grains",
   // viewport: "width=device-width, initial-scale=1.0",
 };
